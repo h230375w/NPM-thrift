@@ -38,7 +38,14 @@
     </style>
 </head>
 <body>
-    
+    <script>
+    document.getElementById('toggleSidebar').onclick = function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.display = sidebar.style.display === 'none' || sidebar.style.display === '' ? 'block' : 'none';
+    };
+</script>
+    <button class="btn btn-primary" id="toggleSidebar">Toggle Sidebar</button>
+
     <nav class="sidebar" style="width: 120px;display:none;">
         <div class="navbar-brand"> <h1 style="font-size: 10px;">Clothings</h1></div>
         <ul class="navbar-nav">
