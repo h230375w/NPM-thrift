@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Bag Collection</title>
+    <script>
+        export{addToCart};
+        function addToCart({name, price, image}) {
+            let cart = localStorage.getItem("cart");
+            let cartArr;
+            if (!cart) {
+                cartArr = [{name, price, image}];
+            } else {
+                try {
+                    cartArr = JSON.parse(cart);
+                } catch {
+                    cartArr = [];
+                }
+                cartArr.push({name, price, image});
+            }
+           return localStorage.setItem("cart", JSON.stringify(cartArr));
+            alert(`${name} added to cart!`);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Women Bag Collection</h1>
+
+    <div class="product">
+        <img src="/images/womenbag1.jpg" alt="womenbag1">
+        <h2>Cute bags</h2>
+        <p>$49.99</p>
+    </div>
+    <button onclick="window.location.href='shop.html';">
+        Go Back to find item in shop
+    </button>
+
+    <div class="product">
+        <img src="/images/womenbag2.jpg" alt="womenbag2">
+        <h2>Cargo pinky satchel</h2>
+        <p>$39.99</p>
+        <button onclick="window.location.href='shop.html';">
+            Go Back to find item in shop
+        </button>    </div>
+
+    <div class="product">
+        <img src="/images/womenbag3.jpg" alt="womenbag3">
+        <h2>Feminine bags</h2>
+        <p>$44.99</p>
+        <button onclick="window.location.href='shop.html';">
+            Go Back to find item in shop
+        </button>    </div>
+
+</body>
+
+</html>

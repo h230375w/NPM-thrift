@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- shopping cart icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- developer.google/fonts -->
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Tangerine">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="app.css" rel="stylesheet">
+    <title>NPM thrift Shop</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh; /* Full height */
+        }
+        .sidebar {
+            width: 200px; /* Sidebar width */
+            height: 100%; /* Full height */
+            position: fixed; /* Fixed position */
+            background-color: aqua; /* Light background */
+            border-right: 1px solid aqua; /* Border for separation */
+            color: #000;
+        }
+        .sidebar .nav-link {
+            margin: 10px 0; /* Spacing for links */
+        }
+        .content {
+            margin-left: 220px; /* Space for the sidebar */
+            padding: 20px; /* Padding for content */
+        }
+    
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Product Gallery</h1>
+        <div class="row">
+            <!-- Repeat this block for each product -->
+            <div class="col-md-6">
+                <div class="product-card">
+                    <img src="/images/headphones/frame1.jpg" alt="Product 1" class="product-image">
+                    <div class="p-3">
+                        <h5>Product 1</h5>
+                        <p class="price">$29.99</p>
+                        <p>ripped baggy jean</p>
+                        <button onclick="window.location.href='shop.html';">
+                            Go Back to find item in shop
+                        </button> 
+                                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="product-card">
+                    <img src="/images/headphones/frame2.jpg" alt="Product 2" class="product-image">
+                    <div class="p-3">
+                        <h5>Product 2</h5>
+                        <h2>Frame gold</h2>
+                         <p>$29.99</p>
+                         <button onclick="window.location.href='shop.html';">
+                            Go Back to find item in shop
+                        </button>                     </div> 
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="product-card">
+                    <div class="p-3">
+                        <h5>Product 3</h5>
+                        <img src="/images/headphones/frame3.jpg" alt="Product 3" class="product-image">
+                        <div class="p-3">
+                            <h5>Product 2</h5>
+                            <h2>Frame pasted</h2>
+                             <p>$39.99</p>
+                             <button onclick="window.location.href='shop.html';">
+                                Go Back to find item in shop
+                            </button>                 </div>
+            </div>
+        </div>
+     </body>
+</html>

@@ -1,0 +1,94 @@
+h1{
+    background-color: aqua;
+    color: black;
+    text-align: center;
+}
+h5{
+    color:aqua;
+    font-style: italic;
+    
+}
+/* Custom hover effect for navbar links */
+.navbar-nav .nav-link {
+    transition: color 0.5s; /* Smooth transition for color change */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0d58c9; /* Change this to your desired hover color */
+    text-decoration: underline; /* Optional: underline effect */
+}
+/* Custom styles for the jumbotron */
+.jumbotron {
+    background-color: #f8f9fa; /* Light background color for the jumbotron */
+    padding: 4rem 2rem; /* Adjust padding for top/bottom and left/right */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for the heading */
+.jumbotron .display-4 {
+    font-family: 'Tangerine', serif;
+    font-size: 3rem; /* Increase font size */
+    font-weight: 700; /* Bold weight for the heading */
+    color: #343a40; /* Darker color for contrast */
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+/* Styling for the lead paragraph */
+.jumbotron .lead {
+    font-size: 1.5rem; /* Increase font size for the lead */
+    font-weight: 300; /* Lighter weight for contrast */
+    color: #6c757d; /* Grey color for the lead text */
+    line-height: 1.5; /* Improved line height for readability */
+}
+.carousel-caption p {
+    font-size: 1.25rem; /* Adjust the font size for the paragraph */
+    color: aqua; /* Light color for the paragraph text */
+    margin-top: 0.5rem; /* Space above the paragraph */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional: add a shadow for better contrast */
+}
+/*shopping cart*/
+ .cart-icon {
+            font-size: 24px;
+            color: aqua;
+            cursor: pointer;
+        }
+        /*add to cart button*/
+        .add-to-cart {
+            background-color: aqua; /* Green background */
+            color: black;              /* White text color */
+            border: none;              /* No border */
+            border-radius: 5px;       /* Rounded corners */
+            padding: 10px 15px;       /* Padding for a better click area */
+            font-size: 15px;          /* Font size */
+            cursor: pointer;           /* Pointer cursor on hover */
+            
+        }
+        
+        .add-to-cart:hover {
+            background-color: yellowgreen; /* Darker green on hover */
+            transform: scale(1.05);    /* Slightly scale up the button */
+        }
+        
+        .add-to-cart:active {
+            background-color: #1e7e34; /* Even darker green when clicked */
+            transform: scale(0.95);    /* Slightly scale down when active */
+        }
+        
+        .add-to-cart i {
+            margin-right: 5px; /* Spacing between icon and text */
+        }
+        .footer {
+            background-color: #00BFFF; /* Aqua blue */
+            color: white;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: white;
+        }
+        button.add-to-cart.add-to-cart:hover{
+            background-color: #1e7e34;
+
+        }
+
+        

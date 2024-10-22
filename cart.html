@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPMfashions Shopping Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>NPMfashions Shopping Cart</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Cart items will be dynamically generated here -->
+        </tbody>
+    </table>
+    <h3>Total: <span id="total-price">$0.00</span></h3>
+    <button class="btn btn-primary" id="checkout-btn">Checkout</button>
+</div>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+
+    function renderCart() {
+        cartItemsContainer.innerHTML = ''; // Clear existing items
+        let totalPrice = 0; // Reset total price
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            totalPrice += itemTotal;
+            cartItemsContainer.innerHTML += `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>
+                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)">
+                    </td>
+                    <td>$${itemTotal.toFixed(2)}</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="removeFromCart(${item.id})">Remove</button>
+                    </td>
+                </tr>
+            `;
+        });
+
+        document.getElementById('total-price').innerText = `$${totalPrice.toFixed(2)}`;
+    }
+    
+
+    function updateQuantity(productId, quantity) {
+        const item = cart.find(item => item.id === productId);
+        if (item) {
+            item.quantity = parseInt(quantity);
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart
+            renderCart(); // Re-render cart
+        }
+    }
+
+    function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId); // Filter out the removed item
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+        renderCart(); // Re-render the cart to update the UI
+    }
+
+    // Initial render
+    renderCart();
+</script>
+<br>
+<button onclick="window.location.href='shop.html';">
+ Back to Product Gallery
+</button>
+
+
+</body>
+</html>
