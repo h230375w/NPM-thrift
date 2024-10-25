@@ -5,22 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women Bag Collection</title>
+    <style>
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .product {
+            border: 1px solid #ddd; /* Optional: add a border */
+            border-radius: 5px; /* Optional: rounded corners */
+            padding: 10px;
+            margin: 10px;
+            text-align: center; /* Center the content */
+            width: 200px; /* Set a fixed width for product cards */
+        }
+        .product img {
+            max-width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
     <script>
-        export{addToCart};
-        function addToCart({name, price, image}) {
+        export { addToCart };
+        function addToCart({ name, price, image }) {
             let cart = localStorage.getItem("cart");
             let cartArr;
             if (!cart) {
-                cartArr = [{name, price, image}];
+                cartArr = [{ name, price, image }];
             } else {
                 try {
                     cartArr = JSON.parse(cart);
                 } catch {
                     cartArr = [];
                 }
-                cartArr.push({name, price, image});
+                cartArr.push({ name, price, image });
             }
-           return localStorage.setItem("cart", JSON.stringify(cartArr));
+            localStorage.setItem("cart", JSON.stringify(cartArr));
             alert(`${name} added to cart!`);
         }
     </script>
@@ -29,31 +49,32 @@
 <body>
     <h1>Women Bag Collection</h1>
 
-    <div class="product">
-        <img src="images/womenbag1.jpg" alt="womenbag1">
-        <h2>Cute bags</h2>
-        <p>$49.99</p>
+    <div class="product-container">
+        <div class="product">
+            <img src="images/womenbag1.jpg" alt="womenbag1">
+            <h2>Cute bags</h2>
+            <p>$49.99</p>
+            <button onclick="addToCart({ name: 'Cute bags', price: 49.99, image: 'images/womenbag1.jpg' });">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/womenbag2.jpg" alt="womenbag2">
+            <h2>Cargo pinky satchel</h2>
+            <p>$39.99</p>
+            <button onclick="addToCart({ name: 'Cargo pinky satchel', price: 39.99, image: 'images/womenbag2.jpg' });">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/womenbag3.jpg" alt="womenbag3">
+            <h2>Feminine bags</h2>
+            <p>$44.99</p>
+            <button onclick="addToCart({ name: 'Feminine bags', price: 44.99, image: 'images/womenbag3.jpg' });">Add to Cart</button>
+        </div>
     </div>
+
     <button onclick="window.location.href='shop.html';">
         Go Back to find item in shop
     </button>
-
-    <div class="product">
-        <img src="images/womenbag2.jpg" alt="womenbag2">
-        <h2>Cargo pinky satchel</h2>
-        <p>$39.99</p>
-        <button onclick="window.location.href='shop.html';">
-            Go Back to find item in shop
-        </button>    </div>
-
-    <div class="product">
-        <img src="images/womenbag3.jpg" alt="womenbag3">
-        <h2>Feminine bags</h2>
-        <p>$44.99</p>
-        <button onclick="window.location.href='shop.html';">
-            Go Back to find item in shop
-        </button>    </div>
-
 </body>
 
 </html>
